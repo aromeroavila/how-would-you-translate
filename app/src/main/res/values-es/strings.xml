@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">How Would You Translate</string>
+
+    <!-- Login Screen specific strings -->
+    <string name="username_et_hint">Nombre de usuario</string>
+    <string name="password_et_hint">Contraseña</string>
+    <string name="confirm_password_et_hint">Confirmar contraseña</string>
+    <string name="login_b">Entrar</string>
+    <string name="register_b">Registrarse</string>
+
+
+    <!-- Registration Screen specific strings -->
+    <string name="register_select_language_explanation">Esto podrá ser cambiado en el futuro</string>
+    <!-- User details step -->
+    <string name="user_details">Detalles de usuario ></string>
+    <string name="register_enter_user_id">Por favor introduce tu nombre de usuario y contraseña</string>
+    <!-- Mother language step -->
+    <string name="mother_languages">Lengua materna ></string>
+    <string name="register_select_mother_language">Por favor introducte tu lengua materna</string>
+    <!-- Spoken languages step -->
+    <string name="spoken_languages">Lenguajes hablados</string>
+    <string name="register_select_spoken_language">Por favor introduce los lenguajes que hablas</string>
+    <string name="finish_registration_b">Acabar</string>
+
+
+    <!-- Home Screen specific strings -->
+    <string name="menu_item_title_about">Sobre</string>
+    <string name="menu_item_title_search">Buscar</string>
+    <string name="drawer_open">Abrir</string>
+    <string name="drawer_close">Cerrar</string>
+</resources>

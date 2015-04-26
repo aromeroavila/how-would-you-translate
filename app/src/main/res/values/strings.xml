@@ -1,3 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">hwyt</string>
+    <string name="app_name">How Would You Translate</string>
+
+
+    <!-- Splash Screen specific -->
+    <string name="progress_checking_connection">Checking Internet connection</string>
+    <string name="progress_checking_logged_user">Checking logged user</string>
+    <string name="progress_authenticating_logged_user">Authenticating logged user</string>
+
+    <!-- Login Screen specific strings -->
+    <string name="login_action_bar_title">Login</string>
+    <string name="username_et_hint">Username</string>
+    <string name="password_et_hint">Password</string>
+    <string name="confirm_password_et_hint">Confirm password</string>
+    <string name="login_b">Login</string>
+    <string name="register_b">Register</string>
+    <string name="of_indicator">" of "</string>
+    <string name="login_title">Please enter your login details</string>
+    <string name="login_remember_user_checkbox_text">Keep me logged in</string>
+
+
+    <!-- Registration Screen specific strings -->
+        <!-- User details step -->
+    <string name="register_enter_user_id">Please enter your username and password</string>
+    <string name="register_passwords_do_not_match_error">The entered passwords are not equal</string>
+    <string name="register_username_already_exists">The entered username already exists</string>
+        <!-- Mother language step -->
+    <string name="register_select_mother_language">Please select your mother language</string>
+        <!-- Spoken languages step -->
+    <string name="register_select_spoken_language">Please select the languages you speak</string>
+        <!-- Avatar selection step -->
+    <string name="register_select_avatar">Please swipe the images until you find the avatar you want to have</string>
+        <!-- General -->
+    <string name="register_action_bar_title">Register</string>
+    <string name="register_select_language_explanation">This can be changed in the future</string>
+    <string name="previous_button">Previous</string>
+    <string name="next_button">Next</string>
+    <string name="finish_registration_b">Finish</string>
+    <string name="user_details">User details</string>
+    <string name="mother_languages">Mother language</string>
+    <string name="spoken_languages">Spoken languages</string>
+
+
+    <!-- Home Screen specific strings -->
+    <string name="menu_item_title_profile">Profile</string>
+    <string name="menu_item_title_about">About</string>
+    <string name="menu_item_title_logout">Log out</string>
+    <string name="menu_item_title_search">Search</string>
+    <string name="menu_progress_dialog_message">Loading questions</string>
+        <!-- Navigator drawer actions -->
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Close</string>
+        <!-- home_drawer_list_titles -->
+    <string name="home_navigation_drawer_questions">Questions</string>
+    <string name="home_navigation_drawer_new_question">New question</string>
+    <string name="home_navigation_drawer_your_questions">Your questions</string>
+    <string name="home_navigation_drawer_your_answers">Your answers</string>
+    <string name="home_navigation_drawer_rankings">Rankings</string>
+        <!-- Questions specific -->
+    <string name="question_answer_button">Answer</string>
+    <string name="answer_submit_button">Submit</string>
+    <string name="answer_cancel_button">Cancel</string>
+    <string name="answer_edit_text_hint">Write your answer here</string>
+        <!-- New question specific -->
+    <string name="new_question_hwyt_header">How would you translate&#8230;</string>
+    <string name="new_question_edit_text_hint">Enter your question here</string>
+    <string name="new_question_characters_left">Characters left</string>
+    <string name="new_question_submit_button">Submit</string>
+
+
+    <!-- Profile specific strings -->
+        <!-- View pager tab titles -->
+    <string name="profile_pager_tab_details">Account details</string>
+    <string name="profile_pager_tab_activity">Your activity</string>
+    <string name="profile_pager_tab_rankings">Rankings</string>
+
+
+    <!-- Error screen specific -->
+    <string name="error_screen_title">Error</string>
+    <string name="error_screen_description">Oops, this is so embarrassing, but an error has happened:</string>
+    <string name="error_screen_default_error_message">Unknown error</string>
+    <string name="no_internet_connection_error_message">Your device should be connected to the Internet to use this app. Please connect it and try again.</string>
+
+
+    <!-- Dialogs specific -->
+    <string name="dialog_option_yes">Yes</string>
+    <string name="dialog_option_no">No</string>
+        <!-- Registration screen -->
+    <string name="leave_registration_title">Leave registration</string>
+    <string name="leave_registration_description">You are about to leave the registration and you will lose your progress.\nDo you want to continue?</string>
+        <!-- Logout -->
+    <string name="logout_dialog_title">Logout</string>
+    <string name="logout_dialog_message">You are about to logout. Are you sure you want to continue?</string>
+
+
+    <!-- LanguageConstant names -->
+    <string name="english">English</string>
+    <string name="german">German</string>
+    <string name="italian">Italian</string>
+    <string name="french">French</string>
+    <string name="spanish">Spanish</string>
+    <!-- Language levels -->
+    <string name="level_unassigned">Unassigned</string>
+    <string name="level_beginner">Beginner</string>
+    <string name="level_elementary">Elementary</string>
+    <string name="level_pre_intermediate">Pre-Intermediate</string>
+    <string name="level_intermediate">Intermediate</string>
+    <string name="level_upper_intermediate">Upper Intermediate</string>
+    <string name="level_advanced">Advanced</string>
+    <string name="level_high_advanced">High Advanced</string>
+    <string name="level_proficiency">Proficiency</string>
+    <string name="level_native_speaker">Native speaker</string>
+
+    <!-- Communication specific -->
+    <string name="communication_progress_dialog_title">Connecting to server&#8230;</string>
+    <string name="communication_registration_dialog_message">Saving user</string>
+    <string name="communication_check_username_dialog_message">Checking username availability</string>
+        <!-- Error messages -->
+    <string name="communication_server_down_error_msg">Server is unreachable at this moment.\nPlease try again later.</string>
+
+    <!-- Bundle argument keys -->
+    <string name="BUNDLE_AVATAR_IMAGE_FRAGMENT_RESOURCE_ID_FIELD">bundle_avatar_resource_id</string>
+    <string name="BUNDLE_ERROR_ACTIVITY_ERROR_MESSAGE">bundle_error_activity_message</string>
+    <string name="BUNDLE_ERROR_ACTIVITY_IS_LOGGED">bundle_error_activity_logged</string>
 </resources>

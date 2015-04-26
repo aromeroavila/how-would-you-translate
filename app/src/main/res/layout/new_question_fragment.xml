@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="@dimen/medium_gap"
+        android:background="@color/hwyt_background_color">
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/medium_gap"
+            android:text="@string/new_question_hwyt_header"
+            android:textSize="@dimen/main_title"/>
+
+    <EditText
+            android:id="@+id/new_question_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/medium_gap"
+            android:inputType="textMultiLine"
+            android:hint="@string/new_question_edit_text_hint"
+            android:gravity="top|left"
+            android:minLines="6"
+            android:lines="8"
+            android:maxLines="10"
+            android:scrollbars="vertical"
+            style="@style/rounded_style"/>
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/medium_gap"
+            android:orientation="horizontal"
+            android:layout_gravity="right">
+
+        <TextView
+                android:id="@+id/new_question_character_indicator_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/small_gap"
+                android:layout_centerVertical="true"
+                tools:text="500"
+                style="@style/rounded_style"/>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@id/new_question_character_indicator_tv"
+                android:layout_centerVertical="true"
+                android:text="@string/new_question_characters_left"/>
+
+        <com.arao.hwyt.views.RoundedButton
+                android:id="@+id/new_question_submit_b"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_gravity="right"
+                android:text="@string/new_question_submit_button"/>
+    </RelativeLayout>
+</LinearLayout>

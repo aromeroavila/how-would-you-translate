@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/medium_gap"
+        style="@style/rounded_style">
+
+    <ImageView
+            android:id="@+id/question_user_avatar_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/medium_gap"
+            android:adjustViewBounds="true"
+            android:maxWidth="@dimen/avatar_image_big_size"
+            android:maxHeight="@dimen/avatar_image_big_size"
+            android:scaleType="fitCenter"
+            tools:src="@drawable/avatar_0"/>
+
+    <View
+            android:id="@+id/question_line_separator"
+            android:background="@color/hwyt_separator_line"
+            android:layout_width = "wrap_content"
+            android:layout_height="1dp"
+            android:layout_marginLeft="@dimen/medium_gap"
+            android:layout_marginTop="@dimen/small_gap"
+            android:layout_marginBottom="@dimen/small_gap"
+            android:layout_toRightOf="@id/question_user_avatar_iv"
+            android:layout_alignBottom="@id/question_user_avatar_iv"/>
+
+    <TextView
+            android:id="@+id/question_user_name_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/medium_gap"
+            android:layout_marginLeft="@dimen/medium_gap"
+            android:gravity="center"
+            android:layout_toRightOf="@id/question_user_avatar_iv"
+            android:layout_above="@id/question_line_separator"
+            tools:text="useadsfdr1284"/>
+
+    <TextView
+            android:id="@+id/question_time_posted_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignBottom="@id/question_user_name_tv"
+            android:gravity="center"
+            tools:text="13/03/2014"/>
+
+    <TextView
+            android:id="@+id/question_content_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/question_line_separator"
+            android:layout_alignLeft="@id/question_user_name_tv"
+            tools:text="dummy question without any sense at all but with considerable length"/>
+
+    <View
+            android:id="@+id/question_line_separator_2"
+            android:background="@color/hwyt_separator_line"
+            android:layout_width = "wrap_content"
+            android:layout_height="1dp"
+            android:layout_marginTop="@dimen/small_gap"
+            android:layout_marginBottom="@dimen/small_gap"
+            android:layout_alignLeft="@id/question_user_name_tv"
+            android:layout_below="@id/question_content_tv"
+            android:visibility="gone"/>
+
+    <TextView
+            android:id="@+id/positive_votes_number_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/question_line_separator_2"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="@dimen/medium_gap"
+            android:drawableTop="@drawable/up_vote"
+            android:drawablePadding="@dimen/small_gap"
+            android:gravity="center"
+            tools:text="22"/>
+
+    <TextView
+            android:id="@+id/negative_votes_number_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/question_line_separator_2"
+            android:layout_toLeftOf="@id/positive_votes_number_tv"
+            android:layout_marginTop="@dimen/medium_gap"
+            android:layout_marginRight="@dimen/medium_gap"
+            android:drawableTop="@drawable/down_vote"
+            android:drawablePadding="@dimen/small_gap"
+            android:gravity="center"
+            tools:text="5"/>
+
+    <TextView
+            android:id="@+id/question_answers_number_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/question_line_separator_2"
+            android:layout_toLeftOf="@id/negative_votes_number_tv"
+            android:layout_marginTop="@dimen/medium_gap"
+            android:layout_marginRight="@dimen/medium_gap"
+            android:drawableTop="@drawable/answers"
+            android:drawablePadding="@dimen/small_gap"
+            android:gravity="center"
+            android:visibility="gone"
+            tools:text="13"/>
+
+    <com.arao.hwyt.views.RoundedButton
+            android:id="@+id/question_answer_b"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/question_line_separator_2"
+            android:layout_toLeftOf="@id/question_answers_number_tv"
+            android:layout_marginTop="@dimen/medium_gap"
+            android:layout_marginRight="@dimen/medium_gap"
+            android:focusable="false"
+            android:text="@string/question_answer_button"
+            android:visibility="gone"/>
+
+
+</RelativeLayout>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:background="@color/hwyt_background_color">
+
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/medium_gap"
+            android:text="@string/register_enter_user_id"
+            android:textAlignment="center"
+            android:singleLine="true"
+            android:textSize="@dimen/main_title"/>
+
+    <EditText
+            android:id="@+id/registration_user_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/medium_gap"
+            android:textAlignment="center"
+            android:gravity="center_horizontal"
+            android:hint="@string/username_et_hint"
+            android:singleLine="true"
+            style="@style/rounded_style"/>
+
+    <EditText
+            android:id="@+id/registration_pass_et"
+            android:inputType="textPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/medium_gap"
+            android:textAlignment="center"
+            android:gravity="center_horizontal"
+            android:hint="@string/password_et_hint"
+            android:singleLine="true"
+            style="@style/rounded_style"/>
+
+    <EditText
+            android:id="@+id/registration_pass_confirm_et"
+            android:inputType="textPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/medium_gap"
+            android:textAlignment="center"
+            android:gravity="center_horizontal"
+            android:hint="@string/confirm_password_et_hint"
+            style="@style/rounded_style"/>
+</LinearLayout>

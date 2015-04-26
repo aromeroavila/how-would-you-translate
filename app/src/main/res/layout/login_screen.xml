@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:padding="@dimen/extra_large_gap"
+        android:background="@color/hwyt_background_color">
+
+    <ImageView
+            android:id="@+id/login_logo_i"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginBottom="@dimen/large_gap"
+            android:src="@drawable/ic_launcher"/>
+
+    <TextView
+            android:id="@+id/login_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/medium_gap"
+            android:text="@string/login_title"/>
+
+    <EditText
+            android:id="@+id/login_user_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/medium_gap"
+            android:gravity="center"
+            android:hint="@string/username_et_hint"
+            style="@style/rounded_style"/>
+
+    <EditText
+            android:id="@+id/login_pass_et"
+            android:inputType="textPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/medium_gap"
+            android:gravity="center"
+            android:hint="@string/password_et_hint"
+            style="@style/rounded_style"/>
+
+    <CheckBox
+            android:id="@+id/login_remember_user_ctv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:text="@string/login_remember_user_checkbox_text"/>
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/medium_gap">
+
+        <com.arao.hwyt.views.RoundedButton
+                android:id="@+id/login_register_b"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/register_b"/>
+
+        <com.arao.hwyt.views.RoundedButton
+                android:id="@+id/login_login_b"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="@string/login_b"/>
+
+    </RelativeLayout>
+</LinearLayout>

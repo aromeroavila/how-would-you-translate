@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="home_drawer_list_titles">
+        <item>@string/home_navigation_drawer_questions</item>
+        <item>@string/home_navigation_drawer_new_question</item>
+        <item>@string/home_navigation_drawer_your_questions</item>
+        <item>@string/home_navigation_drawer_your_answers</item>
+        <!--<item>@string/home_navigation_drawer_rankings</item>-->
+    </string-array>
+
+    <string-array name="your_profile_pages_title">
+        <item>@string/profile_pager_tab_details</item>
+        <item>@string/profile_pager_tab_activity</item>
+        <item>@string/profile_pager_tab_rankings</item>
+    </string-array>
+
+    <string-array name="language_level_names">
+        <item>@string/level_beginner</item>
+        <item>@string/level_elementary</item>
+        <item>@string/level_pre_intermediate</item>
+        <item>@string/level_intermediate</item>
+        <item>@string/level_upper_intermediate</item>
+        <item>@string/level_advanced</item>
+        <item>@string/level_high_advanced</item>
+        <item>@string/level_proficiency</item>
+        <item>@string/level_native_speaker</item>
+    </string-array>
+
+</resources>

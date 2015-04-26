@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="fragment_transition_fade_duration">500</integer>
+    <integer name="fade_anim_time">500</integer>
+    <integer name="avatar_image_resource_files_number">19</integer>
+</resources>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:padding="@dimen/medium_gap"
+              android:background="@color/hwyt_background_color">
+
+    <ExpandableListView
+            android:id="@+id/single_question_answers_elv"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            style="@style/rounded_list_view_style"/>
+
+    <RelativeLayout
+            android:id="@+id/answer_form_rl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/medium_gap"
+            android:visibility="gone">
+
+        <EditText
+                android:id="@+id/answer_form_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/answer_edit_text_hint"
+                android:inputType="text"
+                style="@style/rounded_style"/>
+
+        <com.arao.hwyt.views.RoundedButton
+                android:id="@+id/answer_form_submit_b"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/medium_gap"
+                android:layout_below="@id/answer_form_et"
+                android:layout_alignParentRight="true"
+                android:text="@string/answer_submit_button"/>
+
+        <com.arao.hwyt.views.RoundedButton
+                android:id="@+id/answer_form_cancel_b"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/medium_gap"
+                android:layout_marginRight="@dimen/small_gap"
+                android:layout_below="@id/answer_form_et"
+                android:layout_toLeftOf="@id/answer_form_submit_b"
+                android:text="@string/answer_cancel_button"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

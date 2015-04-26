@@ -1,8 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <style name="AppTheme" parent="@style/Theme.AppCompat.Light.DarkActionBar"/>
 
-    <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
+    <style name="HwytTheme">
+        <item name="android:textColor">@android:color/black</item>
     </style>
 
+    <style name="rounded_style">
+        <item name="android:padding">@dimen/medium_gap</item>
+        <item name="android:background">@drawable/rounded_view_states</item>
+    </style>
+
+    <style name="rounded_list_view_style">
+        <item name="android:background">@drawable/rounded</item>
+    </style>
 </resources>

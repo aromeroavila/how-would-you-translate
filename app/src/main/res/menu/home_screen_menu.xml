@@ -1,0 +1,28 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:appcompat="http://schemas.android.com/apk/res-auto">
+
+    <item
+            android:id="@+id/action_profile"
+            android:title="@string/menu_item_title_profile"
+            android:orderInCategory="2"
+            android:showAsAction="never"/>
+
+    <item
+            android:id="@+id/action_about"
+            android:title="@string/menu_item_title_about"
+            android:orderInCategory="2"
+            android:showAsAction="never"/>
+
+    <item
+            android:id="@+id/action_logout"
+            android:title="@string/menu_item_title_logout"
+            android:orderInCategory="3"
+            android:showAsAction="never"/>
+
+    <item
+            android:id="@+id/menu_search"
+            android:title="@string/menu_item_title_search"
+            appcompat:actionViewClass="android.support.v7.widget.SearchView"
+            appcompat:showAsAction="always"/>
+
+</menu>

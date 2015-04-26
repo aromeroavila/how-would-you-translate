@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/extra_large_gap"
+        android:background="@color/hwyt_background_color">
+
+    <TextView
+            android:id="@+id/register_step_indicator_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            style="@style/rounded_style"/>
+
+    <LinearLayout
+            android:id="@+id/register_steps_fragment_container"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+    </LinearLayout>
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/medium_gap">
+
+        <com.arao.hwyt.views.RoundedButton
+                android:id="@+id/register_previous_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:text="@string/previous_button"/>
+
+        <com.arao.hwyt.views.RoundedButton
+                android:id="@+id/register_next_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="@string/next_button"/>
+
+        <com.arao.hwyt.views.RoundedButton
+                android:id="@+id/register_finish_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:visibility="gone"
+                android:text="@string/finish_registration_b"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:gravity="center"
+              android:background="@color/hwyt_background_color">
+
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/medium_gap"
+            android:text="@string/register_select_mother_language"
+            android:textAlignment="center"
+            android:layout_gravity="center"
+            android:textSize="@dimen/main_title"/>
+
+    <ListView
+            android:id="@+id/register_languages_list_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/rounded_list_view_style">
+    </ListView>
+
+</LinearLayout>
