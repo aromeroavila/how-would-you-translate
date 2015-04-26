@@ -6,7 +6,7 @@ package com.arao.hwyt.net;
  *
  * @param <T> Result type of the Request
  */
-public interface HwytRequest<T> {
+public interface Request<T> {
 
     /**
      * @return Endpoint for this request. In case it is a GET request and this contains any

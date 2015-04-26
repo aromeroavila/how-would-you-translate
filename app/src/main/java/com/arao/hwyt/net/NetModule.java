@@ -10,6 +10,10 @@ public class NetModule {
         return RequestManagerImpl.getRequestManager();
     }
 
+    public static UrlProvider urlProvider() {
+        return new UrlProviderImpl();
+    }
+
     //----------------------------- Package scope injections -------------------------------------//
 
     static RequestFactory requestFactory() {

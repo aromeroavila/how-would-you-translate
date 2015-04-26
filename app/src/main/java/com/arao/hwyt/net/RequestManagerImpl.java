@@ -39,10 +39,10 @@ class RequestManagerImpl implements RequestManager {
     }
 
     @Override
-    public <T> void executeRequest(HwytRequest<T> hwytRequest, RequestListener<T> requestListener) {
+    public <T> void executeRequest(Request<T> request, RequestListener<T> requestListener) {
         BridgeListener<T> bridgeListener = mBridgeListenerFactory.getBridgeListener();
         bridgeListener.setListener(requestListener);
 
-        mRequestQueue.add(mRequestFactory.getREquest(hwytRequest, bridgeListener));
+        mRequestQueue.add(mRequestFactory.getREquest(request, bridgeListener));
     }
 }

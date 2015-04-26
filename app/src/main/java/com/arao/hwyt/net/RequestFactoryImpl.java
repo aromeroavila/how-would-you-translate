@@ -2,7 +2,6 @@ package com.arao.hwyt.net;
 
 import com.android.volley.NetworkResponse;
 import com.android.volley.ParseError;
-import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.toolbox.HttpHeaderParser;
 import com.android.volley.toolbox.JsonRequest;
@@ -21,13 +20,13 @@ class RequestFactoryImpl implements RequestFactory {
     }
 
     @Override
-    public <T> Request<T> getREquest(HwytRequest<T> hwytRequest, BridgeListener<T> bridgeListener) {
+    public <T> com.android.volley.Request getREquest(Request<T> request, BridgeListener<T> bridgeListener) {
 
-        final Class<T> clazz = hwytRequest.getClazz();
+        final Class<T> clazz = request.getClazz();
 
-        return new JsonRequest<T>(hwytRequest.getMethod(),
-                hwytRequest.getUrl(),
-                hwytRequest.getJsonBody(),
+        return new JsonRequest<T>(request.getMethod(),
+                request.getUrl(),
+                request.getJsonBody(),
                 bridgeListener,
                 bridgeListener) {
 
