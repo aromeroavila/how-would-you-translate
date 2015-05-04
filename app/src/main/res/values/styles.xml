@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="AppTheme" parent="@style/Theme.AppCompat.Light.DarkActionBar"/>
+
+    <!-- extend one of the Theme.AppCompat themes -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowActionBar">false</item>
+
+        <!-- customize the color palette -->
+        <item name="colorPrimary">@color/hwyt_background_color</item>
+        <item name="colorPrimaryDark">@color/hwyt_background_secondary_color</item>
+        <item name="colorAccent">@color/hwyt_background_third_color</item>
+    </style>
 
     <style name="HwytTheme">
         <item name="android:textColor">@android:color/black</item>

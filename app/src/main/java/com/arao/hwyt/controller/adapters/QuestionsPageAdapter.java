@@ -32,4 +32,9 @@ public class QuestionsPageAdapter extends FragmentStatePagerAdapter {
     public int getCount() {
         return mFilters.size();
     }
+
+    @Override
+    public CharSequence getPageTitle(int position) {
+        return mFilters.get(position).getFilterTitle();
+    }
 }

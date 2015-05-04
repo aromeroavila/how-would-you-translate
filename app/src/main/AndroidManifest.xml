@@ -20,16 +20,11 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name="com.arao.hwyt.controller.activities.HomeActivity"
-            android:theme="@style/Theme.AppCompat.Light.DarkActionBar"/>
-        <activity android:name="com.arao.hwyt.controller.activities.LoginActivity"
-            android:theme="@style/Theme.AppCompat.Light.DarkActionBar"/>
-        <activity android:name="com.arao.hwyt.controller.activities.ErrorActivity"
-            android:theme="@style/Theme.AppCompat.Light.DarkActionBar"/>
-        <activity android:name="com.arao.hwyt.controller.activities.RegisterActivity"
-            android:theme="@style/Theme.AppCompat.Light.DarkActionBar"/>
-        <activity android:name="com.arao.hwyt.controller.activities.ProfileActivity"
-            android:theme="@style/Theme.AppCompat.Light.DarkActionBar"/>
+        <activity android:name="com.arao.hwyt.controller.activities.HomeActivity"/>
+        <activity android:name="com.arao.hwyt.controller.activities.LoginActivity"/>
+        <activity android:name="com.arao.hwyt.controller.activities.ErrorActivity"/>
+        <activity android:name="com.arao.hwyt.controller.activities.RegisterActivity"/>
+        <activity android:name="com.arao.hwyt.controller.activities.ProfileActivity"/>
 
     </application>
 

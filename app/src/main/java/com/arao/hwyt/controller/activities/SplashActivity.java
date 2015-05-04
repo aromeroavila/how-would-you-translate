@@ -3,8 +3,8 @@ package com.arao.hwyt.controller.activities;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.TextView;
+
 import com.arao.hwyt.R;
 import com.arao.hwyt.controller.HwytApplication;
 import com.arao.hwyt.model.User;
@@ -24,6 +24,7 @@ public class SplashActivity extends Activity {
     private UserSessionChecker mUserSessionChecker;
 
 
+    @SuppressWarnings("unused")
     public SplashActivity() {
         this(splashActivityUi());
     }

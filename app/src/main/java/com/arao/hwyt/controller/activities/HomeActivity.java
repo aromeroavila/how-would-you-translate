@@ -5,13 +5,14 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.res.Configuration;
 import android.os.Bundle;
-import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -36,18 +37,16 @@ import java.util.List;
  * Time: 17:00
  */
 public class HomeActivity extends ActionBarActivity implements ListView.OnItemClickListener,
-        ActionBar.TabListener, HomeFragmentListener {
+        HomeFragmentListener {
 
     private final static int QUESTIONS_NAVIGATION_DRAWER_ITEM_POSITION = 0;
     private final static int NEW_QUESTION_NAVIGATION_DRAWER_ITEM_POSITION = 1;
     private final static int YOUR_QUESTIONS_NAVIGATION_DRAWER_ITEM_POSITION = 2;
     private final static int YOUR_ANSWERS_NAVIGATION_DRAWER_ITEM_POSITION = 3;
 
-
     private FragmentManager mFragmentManager;
-
-    private ActionBar mActionBar;
     private DrawerLayout mDrawerLayout;
+    private Toolbar mToolbar;
     private ActionBarDrawerToggle mDrawerToggle;
     private ListView mDrawerList;
     private ProgressDialog mProgressDialog;
@@ -97,37 +96,39 @@ public class HomeActivity extends ActionBarActivity implements ListView.OnItemCl
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mDrawerList = (ListView) findViewById(R.id.left_drawer);
 
-        mDrawerList.setAdapter(new ArrayAdapter<String>(this, R.layout.navigation_drawer_list_item, mDrawerItemsTitle));
+        mDrawerList.setAdapter(new ArrayAdapter<>(this, R.layout.navigation_drawer_list_item, mDrawerItemsTitle));
         mDrawerList.setOnItemClickListener(this);
     }
 
     private void initActionBar() {
-        mActionBar = getSupportActionBar();
+        mToolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(mToolbar);
+
 
         mDrawerToggle = new ActionBarDrawerToggle(
                 this,                  /* host Activity */
                 mDrawerLayout,         /* DrawerLayout object */
-                R.drawable.ic_drawer,  /* nav drawer icon to replace 'Up' caret */
+                mToolbar,
                 R.string.drawer_open,  /* "open drawer" description */
                 R.string.drawer_close  /* "close drawer" description */
         ) {
 
             /** Called when a drawer has settled in a completely closed state. */
             public void onDrawerClosed(View view) {
-                mActionBar.setTitle(mTitle);
+                mToolbar.setTitle(mTitle);
             }
 
             /** Called when a drawer has settled in a completely open state. */
             public void onDrawerOpened(View drawerView) {
-                mActionBar.setTitle(mTitle);
+                mToolbar.setTitle(mTitle);
             }
         };
 
         // Set the drawer toggle as the DrawerListener
         mDrawerLayout.setDrawerListener(mDrawerToggle);
 
-        mActionBar.setDisplayHomeAsUpEnabled(true);
-        mActionBar.setHomeButtonEnabled(true);
+//        mToolbar.setDisplayHomeAsUpEnabled(true);
+//        mToolbar.setHomeButtonEnabled(true);
 
         setTitle(mDrawerItemsTitle[0]);
     }
@@ -240,7 +241,7 @@ public class HomeActivity extends ActionBarActivity implements ListView.OnItemCl
     @Override
     public void setTitle(CharSequence title) {
         mTitle = title;
-        mActionBar.setTitle(mTitle);
+        mToolbar.setTitle(mTitle);
     }
 
     @Override
@@ -249,50 +250,36 @@ public class HomeActivity extends ActionBarActivity implements ListView.OnItemCl
     }
 
     @Override
-    public void onTabSelected(ActionBar.Tab tab, FragmentTransaction fragmentTransaction) {
-        Fragment currentFragment = mFragmentManager.findFragmentById(R.id.content_frame);
-        if (currentFragment instanceof QuestionsFragment) {
-            ((QuestionsFragment) currentFragment).setCurrentViewPagerItem(tab.getPosition());
-        }
-    }
-
-    @Override
-    public void onTabUnselected(ActionBar.Tab tab, FragmentTransaction fragmentTransaction) {}
-
-    @Override
-    public void onTabReselected(ActionBar.Tab tab, FragmentTransaction fragmentTransaction) {}
-
-    @Override
     public void onTabConfigurationChanged(List<String> titles) {
         if (titles.size() > 1) {
-            mActionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
-            mActionBar.removeAllTabs();
+//            mToolbar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
+//            mToolbar.removeAllTabs();
 
             for (int i=0; i<titles.size(); i++) {
-                mActionBar.addTab(mActionBar.newTab().setText(titles.get(i)).setTabListener(this));
+//                mToolbar.addTab(mToolbar.newTab().setText(titles.get(i)).setTabListener(this));
             }
         } else {
-            mActionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
-            mActionBar.removeAllTabs();
+//            mToolbar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
+//            mToolbar.removeAllTabs();
         }
     }
 
     @Override
     public void onTabsRemoved() {
-        mActionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
-        mActionBar.removeAllTabs();
+//        mToolbar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
+//        mToolbar.removeAllTabs();
     }
 
     @Override
     public void onPageChanged(int position) {
-        mActionBar.setSelectedNavigationItem(position);
+//        mToolbar.setSelectedNavigationItem(position);
     }
 
     @Override
     public void onDisplayBackButton() {
-        mActionBar.removeAllTabs();
-        mActionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
-        mActionBar.setDisplayHomeAsUpEnabled(true);
+//        mToolbar.setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
         mDrawerToggle.setDrawerIndicatorEnabled(false);
     }
 

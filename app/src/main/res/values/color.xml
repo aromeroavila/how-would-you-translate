@@ -1,17 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- PINK COLOR SKIN -->
-    <color name="hwyt_background_color">#B657C9</color>
-    <color name="hwyt_background_secondary_color">#D38AE6</color>
-    <color name="hwyt_background_third_color">#803C91</color>
-    <color name="hwyt_rounded_selected_color">#6D1A82</color>
 
     <!-- GREEN COLOR SKIN -->
-    <!--<color name="hwyt_background_color">#54E36E</color>-->
-    <!--<color name="hwyt_background_secondary_color">#89F59D</color>-->
-    <!--<color name="hwyt_background_third_color">#008719</color>-->
-    <!--<color name="hwyt_rounded_selected_color">#00580F</color>-->
-
+    <color name="hwyt_background_color">#54E36E</color>
+    <color name="hwyt_background_secondary_color">#89F59D</color>
+    <color name="hwyt_background_third_color">#008719</color>
+    <color name="hwyt_rounded_selected_color">#00580F</color>
 
     <color name="hwyt_separator_line">@color/hwyt_background_color</color>
 

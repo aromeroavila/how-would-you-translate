@@ -8,18 +8,17 @@ import android.view.ViewGroup;
 import com.arao.hwyt.R;
 import com.arao.hwyt.controller.adapters.QuestionsPageAdapter;
 import com.arao.hwyt.model.Filter;
+import com.astuetz.PagerSlidingTabStrip;
 
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by Angel on 10/04/2014.
- */
 public class QuestionsFragment extends HomeFragment implements ViewPager.OnPageChangeListener {
 
     private final static String FILTER_LIST_BUNDLE_ARGUMENT_ID = "filters";
 
     private ViewPager mViewPager;
+    private PagerSlidingTabStrip mPagerSlidingTabStrip;
     private List<Filter> mFilterList;
 
 
@@ -50,6 +49,9 @@ public class QuestionsFragment extends HomeFragment implements ViewPager.OnPageC
             mViewPager = (ViewPager) rootView.findViewById(R.id.pager);
             mViewPager.setAdapter(questionsPageAdapter);
             mViewPager.setOnPageChangeListener(this);
+
+            mPagerSlidingTabStrip = (PagerSlidingTabStrip) rootView.findViewById(R.id.questions_tabs);
+            mPagerSlidingTabStrip.setViewPager(mViewPager);
         }
 
         return rootView;
