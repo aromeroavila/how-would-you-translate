@@ -22,11 +22,11 @@ class RequestFactoryImpl implements RequestFactory {
     @Override
     public <T> com.android.volley.Request getRequest(Request<T> request, BridgeListener<T> bridgeListener) {
 
-        final Class<T> clazz = request.getClazz();
+        final Class<T> resultClazz = request.getResultClazz();
 
         return new JsonRequest<T>(request.getMethod(),
                 request.getUrl(),
-                request.getJsonBody(),
+                mGson.toJson(request.getBody()),
                 bridgeListener,
                 bridgeListener) {
 
@@ -37,7 +37,7 @@ class RequestFactoryImpl implements RequestFactory {
                             response.data,
                             HttpHeaderParser.parseCharset(response.headers));
                     return Response.success(
-                            mGson.fromJson(json, clazz),
+                            mGson.fromJson(json, resultClazz),
                             HttpHeaderParser.parseCacheHeaders(response));
                 } catch (UnsupportedEncodingException e) {
                     return Response.error(new ParseError(e));

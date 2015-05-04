@@ -1,14 +1,14 @@
 package com.arao.hwyt.net.test;
 
 import android.app.Activity;
-import android.content.Context;
 import android.util.Log;
-import com.android.volley.NetworkResponse;
+
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.arao.hwyt.R;
 import com.arao.hwyt.model.Answer;
 import com.arao.hwyt.model.Comment;
 import com.arao.hwyt.model.Filter;
@@ -17,17 +17,12 @@ import com.arao.hwyt.model.Question;
 import com.arao.hwyt.model.User;
 import com.arao.hwyt.model.enums.LanguageConstant;
 import com.arao.hwyt.model.enums.LanguageLevel;
-import com.arao.hwyt.net.requests.LoginRequest;
-import com.arao.hwyt.net.requests.RegisterRequest;
-import com.arao.hwyt.util.PasswordEncrypter;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+
 import org.json.JSONException;
 import org.json.JSONObject;
-import com.arao.hwyt.R;
 
-import java.io.UnsupportedEncodingException;
-import java.security.GeneralSecurityException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
@@ -160,27 +155,27 @@ public class QuestionsRetriever {
 //        mRequestQueue.add(loginRequest);
 //    }
 
-    public static void testRegister(Context context) throws GeneralSecurityException {
-        User user2 = new User("testUser4", "password3", new Language(LanguageConstant.SPANISH, LanguageLevel.NATIVE_SPEAKER), Arrays.asList(new Language(LanguageConstant.ENGLISH, LanguageLevel.ADVANCED)));
-        RegisterRequest registerRequest = null;
-        try {
-            user2.setPassword(PasswordEncrypter.encrypt(user2.getPassword()));
-            registerRequest = new RegisterRequest(user2, new Response.Listener<Integer>() {
-                @Override
-                public void onResponse(Integer response) {
-                    Log.d("USER_ID", Integer.toString(response));
-                }
-            }, new Response.ErrorListener() {
-                @Override
-                public void onErrorResponse(VolleyError error) {
-
-                }
-            });
-        } catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
-
-        RequestQueue mRequestQueue =  Volley.newRequestQueue(context);
-        mRequestQueue.add(registerRequest);
-    }
+//    public static void testRegister(Context context) throws GeneralSecurityException {
+//        User user2 = new User("testUser4", "password3", new Language(LanguageConstant.SPANISH, LanguageLevel.NATIVE_SPEAKER), Arrays.asList(new Language(LanguageConstant.ENGLISH, LanguageLevel.ADVANCED)));
+//        RegisterRequest registerRequest = null;
+//        try {
+//            user2.setPassword(PasswordEncrypter.encrypt(user2.getPassword()));
+//            registerRequest = new RegisterRequest(user2, new Response.Listener<Integer>() {
+//                @Override
+//                public void onResponse(Integer response) {
+//                    Log.d("USER_ID", Integer.toString(response));
+//                }
+//            }, new Response.ErrorListener() {
+//                @Override
+//                public void onErrorResponse(VolleyError error) {
+//
+//                }
+//            });
+//        } catch (UnsupportedEncodingException e) {
+//            e.printStackTrace();
+//        }
+//
+//        RequestQueue mRequestQueue =  Volley.newRequestQueue(context);
+//        mRequestQueue.add(registerRequest);
+//    }
 }

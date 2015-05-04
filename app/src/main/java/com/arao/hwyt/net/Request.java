@@ -4,7 +4,7 @@ package com.arao.hwyt.net;
  * Implementations will contain all the data related to the request to be executed. This data
  * will be used by the {@link RequestFactory} to create a library specific Request
  *
- * @param <T> Result type of the Request
+ * @param <T> Result type of the request
  */
 public interface Request<T> {
 
@@ -20,15 +20,15 @@ public interface Request<T> {
     int getMethod();
 
     /**
-     * @return The class name for the result type. To be used by {@link com.google.gson.Gson} to
-     * extract the POJO from the result Json String
-     */
-    Class<T> getClazz();
-
-    /**
      * @return The body of the request in case it is a POST request. In any other case this will
      * be null.
      * All requests submitted to the server will have a Json body
      */
-    String getJsonBody();
+    Object getBody();
+
+    /**
+     * @return The class name for the result type. To be used by {@link com.google.gson.Gson} to
+     * extract the POJO from the result Json String
+     */
+    Class<T> getResultClazz();
 }

@@ -2,23 +2,19 @@ package com.arao.hwyt.net.requests;
 
 import com.arao.hwyt.net.Request;
 import com.arao.hwyt.net.UrlProvider;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 
 import static com.arao.hwyt.net.NetModule.urlProvider;
 
 abstract class BaseRequest<T> implements Request<T> {
 
     protected final UrlProvider mUrlProvider;
-    protected final Gson mGson;
 
     protected BaseRequest() {
-        this(urlProvider(), new GsonBuilder().create());
+        this(urlProvider());
     }
 
-    protected BaseRequest(UrlProvider urlProvider, Gson gson) {
+    protected BaseRequest(UrlProvider urlProvider) {
         mUrlProvider = urlProvider;
-        mGson = gson;
     }
 
     /**
@@ -33,7 +29,7 @@ abstract class BaseRequest<T> implements Request<T> {
      * By default, request don't have any body
      */
     @Override
-    public String getJsonBody() {
+    public Object getBody() {
         return null;
     }
 }

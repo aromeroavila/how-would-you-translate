@@ -1,35 +1,24 @@
 package com.arao.hwyt.net.requests;
 
 import com.arao.hwyt.model.User;
-import com.arao.hwyt.net.constants.RestApiConstants;
-import com.arao.hwyt.util.PasswordEncrypter;
-
-import java.io.UnsupportedEncodingException;
-import java.security.GeneralSecurityException;
+import com.arao.hwyt.model.requestParams.LoginRequestParams;
 
 public class LoginRequest extends BaseRequest<User> {
 
+    private LoginRequestParams mLoginRequestParams;
+
+    public LoginRequest(LoginRequestParams loginRequestParams) {
+        super();
+        mLoginRequestParams = loginRequestParams;
+    }
+
     @Override
     public String getUrl() {
-        return mUrlProvider.getLoginUrl();
+        return mUrlProvider.getLoginUrl(mLoginRequestParams);
     }
 
     @Override
-    public Class<User> getClazz() {
+    public Class<User> getResultClazz() {
         return User.class;
     }
-
-//    private static String getUrlWithEncryptedPassword(String username, String password) throws GeneralSecurityException,
-//            UnsupportedEncodingException {
-//        StringBuilder stringBuilder = new StringBuilder(URL);
-//        stringBuilder.append("?");
-//        stringBuilder.append(RestApiConstants.USER_NAME);
-//        stringBuilder.append("=");
-//        stringBuilder.append(username);
-//        stringBuilder.append("&");
-//        stringBuilder.append(RestApiConstants.PASSWORD);
-//        stringBuilder.append("=");
-//        stringBuilder.append(PasswordEncrypter.encrypt(password));
-//        return stringBuilder.toString();
-//    }
 }

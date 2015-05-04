@@ -12,7 +12,7 @@ import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.security.GeneralSecurityException;
 
-public class PasswordEncrypter {
+public class EncryptionManager {
 
 	private static final String CIPHER_INSTANCE_TYPE = "PBEWithMD5AndDES";
     private static final String CHARSET_ENCODING_UTF_8 = "UTF-8";
