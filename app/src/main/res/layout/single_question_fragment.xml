@@ -29,7 +29,7 @@
                 android:inputType="text"
                 style="@style/rounded_style"/>
 
-        <com.arao.hwyt.views.RoundedButton
+        <com.arao.hwyt.view.widgets.RoundedButton
                 android:id="@+id/answer_form_submit_b"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -38,7 +38,7 @@
                 android:layout_alignParentRight="true"
                 android:text="@string/answer_submit_button"/>
 
-        <com.arao.hwyt.views.RoundedButton
+        <com.arao.hwyt.view.widgets.RoundedButton
                 android:id="@+id/answer_form_cancel_b"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

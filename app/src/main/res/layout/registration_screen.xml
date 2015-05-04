@@ -29,21 +29,21 @@
             android:orientation="horizontal"
             android:layout_marginTop="@dimen/medium_gap">
 
-        <com.arao.hwyt.views.RoundedButton
+        <com.arao.hwyt.view.widgets.RoundedButton
                 android:id="@+id/register_previous_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:text="@string/previous_button"/>
 
-        <com.arao.hwyt.views.RoundedButton
+        <com.arao.hwyt.view.widgets.RoundedButton
                 android:id="@+id/register_next_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
                 android:text="@string/next_button"/>
 
-        <com.arao.hwyt.views.RoundedButton
+        <com.arao.hwyt.view.widgets.RoundedButton
                 android:id="@+id/register_finish_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

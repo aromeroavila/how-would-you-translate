@@ -6,7 +6,7 @@ package com.arao.hwyt.net;
  */
 public class NetModule {
 
-    static RequestManager requestManager() {
+    public static RequestManager requestManager() {
         return RequestManagerImpl.getRequestManager();
     }
 

@@ -20,7 +20,7 @@ class RequestFactoryImpl implements RequestFactory {
     }
 
     @Override
-    public <T> com.android.volley.Request getREquest(Request<T> request, BridgeListener<T> bridgeListener) {
+    public <T> com.android.volley.Request getRequest(Request<T> request, BridgeListener<T> bridgeListener) {
 
         final Class<T> clazz = request.getClazz();
 

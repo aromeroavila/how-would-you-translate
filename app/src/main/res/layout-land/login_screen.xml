@@ -57,13 +57,13 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/medium_gap">
 
-            <com.arao.hwyt.views.RoundedButton
+            <com.arao.hwyt.view.widgets.RoundedButton
                     android:id="@+id/login_register_b"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/register_b"/>
 
-            <com.arao.hwyt.views.RoundedButton
+            <com.arao.hwyt.view.widgets.RoundedButton
                     android:id="@+id/login_login_b"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

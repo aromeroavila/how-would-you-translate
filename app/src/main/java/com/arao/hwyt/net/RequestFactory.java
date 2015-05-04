@@ -13,5 +13,5 @@ interface RequestFactory {
      * @param <T>            Type of the result of the request
      * @return A library specific {@link com.android.volley.Request} to be executed by the {@link RequestManager}
      */
-    <T> com.android.volley.Request getREquest(Request<T> request, BridgeListener<T> bridgeListener);
+    <T> com.android.volley.Request getRequest(Request<T> request, BridgeListener<T> bridgeListener);
 }

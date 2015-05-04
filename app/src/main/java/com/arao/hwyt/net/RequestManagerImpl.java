@@ -43,6 +43,6 @@ class RequestManagerImpl implements RequestManager {
         BridgeListener<T> bridgeListener = mBridgeListenerFactory.getBridgeListener();
         bridgeListener.setListener(requestListener);
 
-        mRequestQueue.add(mRequestFactory.getREquest(request, bridgeListener));
+        mRequestQueue.add(mRequestFactory.getRequest(request, bridgeListener));
     }
 }

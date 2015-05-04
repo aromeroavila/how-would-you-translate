@@ -52,7 +52,7 @@
                 android:layout_centerVertical="true"
                 android:text="@string/new_question_characters_left"/>
 
-        <com.arao.hwyt.views.RoundedButton
+        <com.arao.hwyt.view.widgets.RoundedButton
                 android:id="@+id/new_question_submit_b"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

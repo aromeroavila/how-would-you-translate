@@ -1,12 +1,35 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.arao.hwyt">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:label="@string/app_name"
         android:icon="@drawable/ic_launcher"
         android:theme="@style/AppTheme"
         android:name="com.arao.hwyt.controller.HwytApplication">
+
+        <activity android:name="com.arao.hwyt.controller.activities.SplashActivity"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name="com.arao.hwyt.controller.activities.HomeActivity"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar"/>
+        <activity android:name="com.arao.hwyt.controller.activities.LoginActivity"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar"/>
+        <activity android:name="com.arao.hwyt.controller.activities.ErrorActivity"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar"/>
+        <activity android:name="com.arao.hwyt.controller.activities.RegisterActivity"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar"/>
+        <activity android:name="com.arao.hwyt.controller.activities.ProfileActivity"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar"/>
 
     </application>
 
