@@ -2,10 +2,10 @@
 <resources>
     <string-array name="home_drawer_list_titles">
         <item>@string/home_navigation_drawer_questions</item>
-        <item>@string/home_navigation_drawer_new_question</item>
         <item>@string/home_navigation_drawer_your_questions</item>
         <item>@string/home_navigation_drawer_your_answers</item>
-        <!--<item>@string/home_navigation_drawer_rankings</item>-->
+        <item>@string/menu_item_title_profile</item>
+        <item>@string/menu_item_title_logout</item>
     </string-array>
 
     <string-array name="your_profile_pages_title">

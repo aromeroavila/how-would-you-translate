@@ -5,13 +5,11 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.res.Configuration;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
-import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -23,7 +21,6 @@ import android.widget.ListView;
 import com.arao.hwyt.R;
 import com.arao.hwyt.controller.broadreceivers.LogoutBroadcastReceiver;
 import com.arao.hwyt.controller.fragments.home.HomeFragmentListener;
-import com.arao.hwyt.controller.fragments.home.NewQuestionFragment;
 import com.arao.hwyt.controller.fragments.home.QuestionsFragment;
 import com.arao.hwyt.model.Filter;
 import com.arao.hwyt.util.DialogHelper;
@@ -36,13 +33,14 @@ import java.util.List;
  * Date: 21/03/2014
  * Time: 17:00
  */
-public class HomeActivity extends ActionBarActivity implements ListView.OnItemClickListener,
+public class HomeActivity extends AppCompatActivity implements ListView.OnItemClickListener,
         HomeFragmentListener {
 
     private final static int QUESTIONS_NAVIGATION_DRAWER_ITEM_POSITION = 0;
-    private final static int NEW_QUESTION_NAVIGATION_DRAWER_ITEM_POSITION = 1;
-    private final static int YOUR_QUESTIONS_NAVIGATION_DRAWER_ITEM_POSITION = 2;
-    private final static int YOUR_ANSWERS_NAVIGATION_DRAWER_ITEM_POSITION = 3;
+    private final static int YOUR_QUESTIONS_NAVIGATION_DRAWER_ITEM_POSITION = 1;
+    private final static int YOUR_ANSWERS_NAVIGATION_DRAWER_ITEM_POSITION = 2;
+    private final static int PROFILE_NAVIGATION_DRAWER_ITEM_POSITION = 3;
+    private final static int LOG_OUT_NAVIGATION_DRAWER_ITEM_POSITION = 4;
 
     private FragmentManager mFragmentManager;
     private DrawerLayout mDrawerLayout;
@@ -74,7 +72,7 @@ public class HomeActivity extends ActionBarActivity implements ListView.OnItemCl
 
         initProgressBar();
         initViews();
-        initActionBar();
+        initToolBar();
 
         selectItem(QUESTIONS_NAVIGATION_DRAWER_ITEM_POSITION);
     }
@@ -100,7 +98,7 @@ public class HomeActivity extends ActionBarActivity implements ListView.OnItemCl
         mDrawerList.setOnItemClickListener(this);
     }
 
-    private void initActionBar() {
+    private void initToolBar() {
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(mToolbar);
 
@@ -126,9 +124,6 @@ public class HomeActivity extends ActionBarActivity implements ListView.OnItemCl
 
         // Set the drawer toggle as the DrawerListener
         mDrawerLayout.setDrawerListener(mDrawerToggle);
-
-//        mToolbar.setDisplayHomeAsUpEnabled(true);
-//        mToolbar.setHomeButtonEnabled(true);
 
         setTitle(mDrawerItemsTitle[0]);
     }
@@ -178,13 +173,6 @@ public class HomeActivity extends ActionBarActivity implements ListView.OnItemCl
                 mDrawerToggle.setDrawerIndicatorEnabled(true);
                 onBackPressed();
                 return true;
-            case R.id.action_profile:
-                Intent profileActivityIntent = new Intent(this, ProfileActivity.class);
-                startActivity(profileActivityIntent);
-                return true;
-            case R.id.action_logout:
-                DialogHelper.displayLogoutConfirmationDialog(this);
-                return true;
         }
 
         return super.onOptionsItemSelected(item);
@@ -203,15 +191,9 @@ public class HomeActivity extends ActionBarActivity implements ListView.OnItemCl
                         .replace(R.id.content_frame, questionsFragment)
                         .commit();
                 break;
-            case NEW_QUESTION_NAVIGATION_DRAWER_ITEM_POSITION:
-                NewQuestionFragment newQuestionFragment = new NewQuestionFragment();
-                mFragmentManager.beginTransaction()
-                        .replace(R.id.content_frame, newQuestionFragment)
-                        .commit();
-                break;
             case YOUR_QUESTIONS_NAVIGATION_DRAWER_ITEM_POSITION:
                 mProgressDialog.show();
-                List<Filter> filters = new ArrayList<Filter>(1);
+                List<Filter> filters = new ArrayList<>(1);
                 Filter yourQuestionsFilter = new Filter();
                 yourQuestionsFilter.setFilterTitle("TestTitle"); // TODO delete this
                 filters.add(yourQuestionsFilter);
@@ -222,7 +204,7 @@ public class HomeActivity extends ActionBarActivity implements ListView.OnItemCl
                 break;
             case YOUR_ANSWERS_NAVIGATION_DRAWER_ITEM_POSITION:
                 mProgressDialog.show();
-                List<Filter> yourAnswersFilters = new ArrayList<Filter>(1);
+                List<Filter> yourAnswersFilters = new ArrayList<>(1);
                 Filter yourAnswersFilter = new Filter();
                 yourAnswersFilter.setFilterTitle("TestTitle"); // TODO delete this
                 yourAnswersFilters.add(yourAnswersFilter);
@@ -230,6 +212,13 @@ public class HomeActivity extends ActionBarActivity implements ListView.OnItemCl
                 mFragmentManager.beginTransaction()
                         .replace(R.id.content_frame, yourAnswersFragment)
                         .commit();
+                break;
+            case PROFILE_NAVIGATION_DRAWER_ITEM_POSITION:
+                Intent profileActivityIntent = new Intent(this, ProfileActivity.class);
+                startActivity(profileActivityIntent);
+                break;
+            case LOG_OUT_NAVIGATION_DRAWER_ITEM_POSITION:
+                DialogHelper.displayLogoutConfirmationDialog(this);
                 break;
         }
 
@@ -250,36 +239,12 @@ public class HomeActivity extends ActionBarActivity implements ListView.OnItemCl
     }
 
     @Override
-    public void onTabConfigurationChanged(List<String> titles) {
-        if (titles.size() > 1) {
-//            mToolbar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
-//            mToolbar.removeAllTabs();
-
-            for (int i=0; i<titles.size(); i++) {
-//                mToolbar.addTab(mToolbar.newTab().setText(titles.get(i)).setTabListener(this));
-            }
-        } else {
-//            mToolbar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
-//            mToolbar.removeAllTabs();
-        }
-    }
-
-    @Override
-    public void onTabsRemoved() {
-//        mToolbar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
-//        mToolbar.removeAllTabs();
-    }
-
-    @Override
-    public void onPageChanged(int position) {
-//        mToolbar.setSelectedNavigationItem(position);
-    }
-
-    @Override
     public void onDisplayBackButton() {
-//        mToolbar.setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        ActionBar actionBar = getSupportActionBar();
+        if (actionBar != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+        }
         mDrawerToggle.setDrawerIndicatorEnabled(false);
     }
 

@@ -2,8 +2,8 @@ package com.arao.hwyt.controller.activities;
 
 import android.content.IntentFilter;
 import android.os.Bundle;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.ViewGroup;
@@ -26,9 +26,9 @@ import java.util.List;
  * Date: 21/05/2014
  * Time: 13:41
  */
-public class ProfileActivity extends ActionBarActivity {
+public class ProfileActivity extends AppCompatActivity {
 
-    private ActionBar mActionBar;
+    private Toolbar mToolbar;
 
     private ImageView mAvatarImage;
     private EditText mUsernameEditText;
@@ -118,11 +118,13 @@ public class ProfileActivity extends ActionBarActivity {
         }
     }
 
+    @SuppressWarnings("ConstantConditions")
     private void initActionBar() {
-        mActionBar = getSupportActionBar();
+        mToolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(mToolbar);
 
-        mActionBar.setDisplayHomeAsUpEnabled(true);
-        mActionBar.setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
 
         setTitle(getString(R.string.menu_item_title_profile));
     }

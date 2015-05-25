@@ -5,20 +5,20 @@ import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
 import com.arao.hwyt.R;
 import com.arao.hwyt.controller.adapters.QuestionsPageAdapter;
 import com.arao.hwyt.model.Filter;
 import com.astuetz.PagerSlidingTabStrip;
+import com.getbase.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class QuestionsFragment extends HomeFragment implements ViewPager.OnPageChangeListener {
+public class QuestionsFragment extends HomeFragment implements View.OnClickListener {
 
     private final static String FILTER_LIST_BUNDLE_ARGUMENT_ID = "filters";
 
-    private ViewPager mViewPager;
-    private PagerSlidingTabStrip mPagerSlidingTabStrip;
     private List<Filter> mFilterList;
 
 
@@ -46,19 +46,21 @@ public class QuestionsFragment extends HomeFragment implements ViewPager.OnPageC
             updateTabTitles();
 
             QuestionsPageAdapter questionsPageAdapter = new QuestionsPageAdapter(getChildFragmentManager(), mFilterList);
-            mViewPager = (ViewPager) rootView.findViewById(R.id.pager);
+            ViewPager mViewPager = (ViewPager) rootView.findViewById(R.id.pager);
             mViewPager.setAdapter(questionsPageAdapter);
-            mViewPager.setOnPageChangeListener(this);
 
-            mPagerSlidingTabStrip = (PagerSlidingTabStrip) rootView.findViewById(R.id.questions_tabs);
+            PagerSlidingTabStrip mPagerSlidingTabStrip = (PagerSlidingTabStrip) rootView.findViewById(R.id.questions_tabs);
             mPagerSlidingTabStrip.setViewPager(mViewPager);
+
+            FloatingActionButton mFab = (FloatingActionButton) rootView.findViewById(R.id.new_questions_fab);
+            mFab.setOnClickListener(this);
         }
 
         return rootView;
     }
 
     private List<Filter> initDefaultQuestionFilters() {
-        List<Filter> filters = new ArrayList<Filter>();
+        List<Filter> filters = new ArrayList<>();
 
         Filter filter1 = new Filter();
         filter1.setFilterTitle("One");
@@ -70,37 +72,18 @@ public class QuestionsFragment extends HomeFragment implements ViewPager.OnPageC
         return filters;
     }
 
-    private  void updateTabTitles() {
-        List<String> tabTitles = new ArrayList<String>();
-        for (int i=0; i<mFilterList.size(); i++) {
+    private void updateTabTitles() {
+        List<String> tabTitles = new ArrayList<>();
+        for (int i = 0; i < mFilterList.size(); i++) {
             tabTitles.add(mFilterList.get(i).getFilterTitle());
         }
-
-        if (mHomeFragmentListener != null) {
-            mHomeFragmentListener.onTabConfigurationChanged(tabTitles);
-        }
     }
 
     @Override
-    public void onPageScrolled(int i, float v, int i2) {
-
-    }
-
-    @Override
-    public void onPageSelected(int i) {
-        if (mHomeFragmentListener != null) {
-            mHomeFragmentListener.onPageChanged(i);
-        }
-    }
-
-    @Override
-    public void onPageScrollStateChanged(int i) {
-
-    }
-
-    public void setCurrentViewPagerItem(int i) {
-        if (mViewPager != null) {
-            mViewPager.setCurrentItem(i, true);
-        }
+    public void onClick(View view) {
+        NewQuestionFragment newQuestionFragment = new NewQuestionFragment();
+        getActivity().getSupportFragmentManager().beginTransaction()
+                .replace(R.id.content_frame, newQuestionFragment)
+                .commit();
     }
 }

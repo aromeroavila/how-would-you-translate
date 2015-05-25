@@ -27,7 +27,7 @@ public class NewQuestionFragment extends HomeFragment {
         super.onCreate(savedInstanceState);
 
         if (mHomeFragmentListener != null) {
-            mHomeFragmentListener.onTabsRemoved();
+            mHomeFragmentListener.onDisplayBackButton();
         }
     }
 
